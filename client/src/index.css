@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-deep: #FAFCFF;
+  --surface-card: #FFFFFF;
+  --surface-subtle: #F1F5F9;
+  --border-subtle: #E2E8F0;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --accent-blue: #2563EB;
+  --accent-cyan: #0284C7;
+  --accent-emerald: #059669;
+  --accent-crimson: #E11D48;
+  --accent-amber: #D97706;
+}
+
+@layer base {
+  body {
+    background-color: #FAFCFF;
+    color: #0F172A;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.04) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.04) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+/* Frosted Glass Navigation Bar */
+.frosted-nav {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.04);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04);
+  color: #0F172A;
+}
+
+.glass-panel-glow {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(37, 99, 235, 0.08);
+}
+
+/* Pristine White Tech Surfaces (Replaces dark carbon glass) */
+.carbon-glass {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 8px 30px -4px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+  color: #1E293B;
+}
+
+.carbon-glass-cyan {
+  background: #FFFFFF;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+  box-shadow: 0 12px 32px -8px rgba(37, 99, 235, 0.1), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+}
+
+.carbon-glass-emerald {
+  background: #FFFFFF;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 12px 32px -8px rgba(16, 185, 129, 0.1), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+}
+
+.carbon-glass-crimson {
+  background: #FFFFFF;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  box-shadow: 0 12px 32px -8px rgba(244, 63, 94, 0.1), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+}
+
+/* Interactive Card Transitions */
+.card-interactive {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-interactive:hover {
+  transform: translateY(-3px);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 16px 36px -8px rgba(37, 99, 235, 0.14);
+}
+
+/* Ultrasonic Sonar Pulse Animation */
+@keyframes sonar-wave {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.animate-sonar {
+  animation: sonar-wave 1.8s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Clean Accent Shadows */
+.glow-cyan {
+  filter: drop-shadow(0 0 6px rgba(2, 132, 199, 0.4));
+}
+
+.glow-emerald {
+  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.4));
+}
+
+.glow-crimson {
+  filter: drop-shadow(0 0 6px rgba(244, 63, 94, 0.4));
+}
+
+/* Scrollbar Customization for Clean Light Theme */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Cyber Car Scanline Reflection */
+@keyframes car-scan {
+  0% {
+    transform: translateY(-120%) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(220%) rotate(45deg);
+    opacity: 1;
+  }
+  61%, 100% {
+    transform: translateY(220%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.animate-car-scan {
+  animation: car-scan 3.2s ease-in-out infinite;
+}

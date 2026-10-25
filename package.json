@@ -1,0 +1,17 @@
+{
+  "name": "smart-car-parking-iot",
+  "version": "1.0.0",
+  "description": "Production-ready Real-Time Smart Car Parking System (IoT Arduino + Three.js Full-Stack Web)",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "server": "cd server && node bridge.js",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently -k -n \"BRIDGE,CLIENT\" -c \"cyan,magenta\" \"npm run server\" \"npm run client\"",
+    "mock": "cross-env MOCK_MODE=true concurrently -k -n \"BRIDGE,CLIENT\" -c \"cyan,magenta\" \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3"
+  }
+}
